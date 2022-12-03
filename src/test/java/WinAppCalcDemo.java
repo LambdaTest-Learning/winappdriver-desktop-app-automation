@@ -7,8 +7,8 @@ import io.appium.java_client.windows.WindowsDriver;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import windriver.WinDriver;
-import org.openqa.selenium.interactions.Action;
+import com.windriver.WinDriver;
+
 public class WinAppCalcDemo
 {
     WindowsDriver driver = null;
@@ -26,14 +26,15 @@ public class WinAppCalcDemo
         capability.setCapability("platformName", "Windows");
         capability.setCapability("deviceName", "Windows10Machine");
 
+        /* Start WinAppDriver.exe so that it can start listening to incoming requests */
+        WinDriver.start();
+
         driver = new WindowsDriver(new URL("http://127.0.0.1:4723/"), capability);
     }
 
     @Test(description="Demonstration of Mouse Actions using ActionChains")
     public void test_mouse_interactions() throws InterruptedException
     {
-        WinDriver.start();
-
         /* create an object for the Actions class and pass the driver argument */
         Actions action = new Actions(driver);
 
