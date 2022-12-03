@@ -1,8 +1,6 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import io.appium.java_client.windows.WindowsDriver;
@@ -10,7 +8,7 @@ import io.appium.java_client.windows.WindowsDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import windriver.WinDriver;
+import com.windriver.WinDriver;
 
 public class WinAppNotepadDemo
 {
@@ -46,8 +44,6 @@ public class WinAppNotepadDemo
     @Test(description="Demonstration of entering content in the Edit Box of Notepad", priority = 0)
     public void test_add_content() throws InterruptedException, MalformedURLException
     {
-        WinDriver.start();
-
         String windowHandle = driver.getWindowHandle();
         System.out.println(windowHandle);
 
