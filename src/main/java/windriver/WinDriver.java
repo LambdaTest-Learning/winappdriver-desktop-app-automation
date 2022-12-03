@@ -1,20 +1,36 @@
-package windriver;
+package com.windriver;
 
 import java.io.File;
 import java.io.IOException;
 import java.awt.Desktop;
 
-public class WinDriver {
+public class WinDriver
+{
     public static void start()
     {
         try
         {
-            Desktop d = Desktop.getDesktop();
-            d.open(new File("C:\\Program Files\\Windows Application Driver\\WinAppDriver.exe"));
+            Desktop desktop = Desktop.getDesktop();
+
+            File file = new File("C:\\Program Files\\Windows Application Driver\\WinAppDriver.exe");
+
+            /* Check if there is support for Desktop or not */
+            if(!Desktop.isDesktopSupported())
+            {
+                System.out.println("not supported");
+                return;
+            }
+
+            if (file.exists())
+            {
+                System.out.println("Open WinAppDriver.exe\n");
+                desktop.open(file);
+            }
         }
         catch (IOException e)
         {
             e.printStackTrace();
+            System.out.println("Encountered Exception\n");
             throw new RuntimeException(e);
         }
     }
