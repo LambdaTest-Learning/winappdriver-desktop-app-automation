@@ -7,13 +7,13 @@
 </listeners>
 
 <test name="[Demo] Automation of actions on Calculator and Notepad Applications"/>
-	<test name="MouseActions and Locators Demo">
+	<test name="WinAppCalculatorDemo">
 		<classes>
 			<class name="WinAppCalcDemo"> </class>
 		</classes>
 	</test>
 	<!-- Please change the file path here -->
-	<test name="Text Area Demo">
+	<test name="WinAppNoteDemo">
 		<parameter name="filePath" value="C:\Himanshu\WinAppDriverDemo.txt" />
 		<classes>
 			<class name="WinAppNotepadDemo"> </class>
