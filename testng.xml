@@ -6,7 +6,6 @@
 	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 </listeners>
 
-<test name="[Demo] Automation of actions on Calculator and Notepad Applications"/>
 	<test name="WinAppCalculatorDemo">
 		<classes>
 			<class name="WinAppCalcDemo"> </class>
