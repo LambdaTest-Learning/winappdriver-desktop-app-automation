@@ -12,7 +12,7 @@ import com.windriver.WinDriver;
 
 public class WinAppNotepadDemo
 {
-    WindowsDriver driver = null;
+    public WindowsDriver driver = null;
     /* Notepad application path */
     public static String appPath="C:\\Windows\\notepad.exe";
     public static String strContent = "This is a demo of WinAppDriver";
@@ -33,6 +33,8 @@ public class WinAppNotepadDemo
         capability.setCapability("app",appPath);
         capability.setCapability("platformName", "Windows");
         capability.setCapability("deviceName", "Windows10Machine");
+
+        WinDriver.start();
 
         driver = new WindowsDriver(new URL("http://127.0.0.1:4723/"), capability);
 
@@ -127,8 +129,8 @@ public class WinAppNotepadDemo
     {
         if (driver != null)
         {
-            driver.quit();
             /* Instantiated WinAppDriver can be stopped, needs to be started again from terminal */
+            driver.quit();
             WinDriver.stop();
         }
     }

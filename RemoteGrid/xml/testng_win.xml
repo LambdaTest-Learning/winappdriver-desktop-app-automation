@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="[Demo] Desktop Application Testing using WinAppDriver">
+<listeners>
+	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+</listeners>
+
+	<test name="Notepad">
+		<parameter name="filePath" value="D:\WinAppDriverDemo.txt"/>
+		<classes>
+			<class name="WinAppNotepadDemo"> </class>
+		</classes>
+	</test>
+
+	<test name="ClassicCalculator">
+		<classes>
+			<class name="WinAppClassicCalcDemo"> </class>
+		</classes>
+	</test>
+</suite>

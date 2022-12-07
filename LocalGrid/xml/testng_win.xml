@@ -6,16 +6,22 @@
 	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 </listeners>
 
-	<test name="WinAppCalculatorDemo">
+<test name="[Demo] Automation of actions on Calculator and Notepad Applications"/>
+	<test name="Calculator">
 		<classes>
 			<class name="WinAppCalcDemo"> </class>
 		</classes>
 	</test>
-	<!-- Please change the file path here -->
-	<test name="WinAppNoteDemo">
-		<parameter name="filePath" value="C:\Himanshu\WinAppDriverDemo.txt" />
+	<test name="ClassicCalculator">
+		<classes>
+			<class name="WinAppClassicCalc"> </class>
+		</classes>
+	</test>
+	<test name="Notepad">
+		<parameter name="filePath" value="C:\Himanshu\WinAppDriverDemo.txt"/>
 		<classes>
 			<class name="WinAppNotepadDemo"> </class>
 		</classes>
 	</test>
+
 </suite>
