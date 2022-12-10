@@ -1,4 +1,6 @@
-Before running the tests on LambdaTest Selenium Grid, you need to set the environment variables - *LT_USERNAME* and *LT_ACCESS_KEY*. Here is how you can do the same:
+The tests are executed on [HyperExecute](https://lambdatest.com/hyperexecute) test automation & test orchestration platform offered by [LambdaTest](https://www.lambdatest.com/). It is recommended to have a look at [HyperExecute Support Documentation](https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml) before you start looking into the YAML used in the project.
+
+Before running the tests on LambdaTest HyperExecute Grid, you need to set the environment variables - *LT_USERNAME* and *LT_ACCESS_KEY*. Here is how you can do the same:
 
 ## Configure Environment Variables
 
@@ -24,6 +26,55 @@ For Windows:
 set LT_USERNAME=LT_USERNAME
 set LT_ACCESS_KEY=LT_ACCESS_KEY
 ```
+
+## Test Orchestration using Auto-Split
+
+```yaml
+---
+version: 0.1
+globalTimeout: 150
+testSuiteTimeout: 150
+testSuiteStep: 150
+
+runson: win
+
+autosplit: true
+retryOnFailure: true
+
+maxRetries: 5
+concurrency: 2
+
+env:
+  # PAT: ${{ .secrets.testKey }}
+  CACHE_DIR: m2_cache_dir
+
+cacheKey: '{{ checksum "pom.xml" }}'
+cacheDirectories:
+  - .m2
+
+pre:
+  # Download and install packages in the CACHE_DIR.
+  # Skip execution of the tests in the pre step
+  - mvn -Dmaven.repo.local=./.m2 dependency:resolve
+
+post:
+  - cat yaml/win/winappdriver_hyperexecute_autosplit.yaml
+
+mergeArtifacts: true
+
+uploadArtefacts:
+ - name: ExecutionSnapshots
+   path:
+    - target/surefire-reports/html/**
+
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: grep 'test name' xml/testng_win.xml | awk '{print$2}' | sed 's/name=//g' | sed 's/\x3e//g'
+
+testRunnerCommand: mvn test `-Dplatname=win `-Dmaven.repo.local=./.m2 dependency:resolve `-DselectedTests=$test
+```
+
 
 ## Project Execution
 
