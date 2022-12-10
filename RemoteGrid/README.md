@@ -1,5 +1,29 @@
 The tests are executed on [HyperExecute](https://lambdatest.com/hyperexecute) test automation & test orchestration platform offered by [LambdaTest](https://www.lambdatest.com/). It is recommended to have a look at [HyperExecute Support Documentation](https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml) before you start looking into the YAML used in the project.
 
+## Basic Know-How of HyperExecute
+
+HyperExecute is a smart test orchestration platform to run end-to-end tests at the fastest speed possible. HyperExecute lets you achieve an accelerated time to market by providing a test infrastructure that offers optimal speed, test orchestration, and detailed execution logs.
+
+The overall experience helps teams test code and fix issues at a much faster pace. HyperExecute is configured using a YAML file. Instead of moving the Hub close to you, HyperExecute brings the test scripts close to the Hub!
+
+Here are some of the documents (in chronological order) that can help you get started with HyperExecute:
+
+- [HyperExecute - Getting Started](https://www.lambdatest.com/support/docs/getting-started-with-hyperexecute/)
+- [HyperExecute - Key Features](https://www.lambdatest.com/support/docs/key-features-of-hyperexecute)
+- [HyperExecute - What is different from Traditional Grids](https://www.lambdatest.com/support/docs/hyperexecute-vs-traditional-test-grids)
+- [HyperExecute - Deep dive into YAML](https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml)
+- [HyperExecute - CLI](https://www.lambdatest.com/support/docs/hyperexecute-cli-run-tests-on-hyperexecute-grid/)
+
+For triggering tests on HyperExecute Grid, please download the HyperExecute CLI in accordance to your platform (i.e. Windows/macOS/Linux).
+
+- Windows:	https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe
+- macOS:	https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
+- Linux:	https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
+
+Place the same in the project's root folder:
+
+<img width="1253" alt="HyperExecute_Command_Copy" src="https://user-images.githubusercontent.com/1688653/206833681-1d7f6a8a-7708-426b-b9e0-a04092b4cdc0.png">
+
 Before running the tests on LambdaTest HyperExecute Grid, you need to set the environment variables - *LT_USERNAME* and *LT_ACCESS_KEY*. Here is how you can do the same:
 
 ## Configure Environment Variables
