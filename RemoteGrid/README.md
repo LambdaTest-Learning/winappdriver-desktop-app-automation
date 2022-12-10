@@ -20,9 +20,9 @@ For triggering tests on HyperExecute Grid, please download the HyperExecute CLI 
 - macOS:	https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
 - Linux:	https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
 
-Place the same in the project's root folder:
+Place the same in the project's root folder and provide *execution* (i.e. +x) to the executable:
 
-<img width="1253" alt="HyperExecute_Command_Copy" src="https://user-images.githubusercontent.com/1688653/206833681-1d7f6a8a-7708-426b-b9e0-a04092b4cdc0.png">
+<img width="747" alt="HyperExecute_Command_Copy" src="https://user-images.githubusercontent.com/1688653/206834201-533db74e-311b-48fd-a64c-1bc47f10d39c.png">
 
 Before running the tests on LambdaTest HyperExecute Grid, you need to set the environment variables - *LT_USERNAME* and *LT_ACCESS_KEY*. Here is how you can do the same:
 
