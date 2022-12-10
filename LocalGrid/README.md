@@ -1,56 +1,38 @@
-Before running the tests on LambdaTest Selenium Grid, you need to set the environment variables - *LT_USERNAME* and *LT_ACCESS_KEY*. Here is how you can do the same:
+Before running the tests, please check the location of the Calculator, Calculator (Classic), and Notepad applications on your Windows machine. The Calculator (Classic) application was not present on my machine, hence it was downloaded from the internet. You can also download and install the Calculator (Classic) application from [here](https://github.com/microsoft/WinAppDriver/releases/tag/v1.2.99)
 
-## Configure Environment Variables
+In the Notepad automation demo, the *.txt* file is saved in the folder *c:\Himanshu* as *WinAppDriverDemo.txt*. In case you want to change the folder name, please change it [testng.xml](https://github.com/hjsblogger/winappdriver-desktop-app-automation/blob/main/testng.xml)
 
-Before the tests are run, please set the environment variables <b>LT_USERNAME</b> & <b>LT_ACCESS_KEY</b> from the terminal. The account details are available on your [LambdaTest Profile](https://accounts.lambdatest.com/detail/profile) page.
+<img width="600" height="250" alt="FilePath" src="https://user-images.githubusercontent.com/1688653/205455356-29fc038c-1f6c-483f-8740-4b59dca641dc.png">
 
-For macOS:
+**Note**: Automation on Calculator, Calculator (Classic), and Notepad applications is tested on Windows 10 machine
 
-```bash
-export LT_USERNAME=LT_USERNAME
-export LT_ACCESS_KEY=LT_ACCESS_KEY
-```
+## Prequisites ##
 
-For Linux:
+ - [**WinAppDriver.exe**](https://github.com/microsoft/WinAppDriver/releases/tag/v1.2.99)
+ - **[Inspect.exe for Windows 10](https://go.microsoft.com/fwlink/?linkid=2164145)** or **[Inspect.exe for Windows 11](https://go.microsoft.com/fwlink/p/?linkid=2196241)**
 
-```bash
-export LT_USERNAME=LT_USERNAME
-export LT_ACCESS_KEY=LT_ACCESS_KEY
-```
+Start WinAppDriver.exe by running the command **./WinAppDriver.exe** after navigating to the directory where it is installed:
+![WinAppDriverScreenshot](https://user-images.githubusercontent.com/1688653/205455944-56d79534-d47f-480e-af0b-d463f7a9640a.png)
 
-For Windows:
+**Inspect.exe** is installed in the following location:
 
-```bash
-set LT_USERNAME=LT_USERNAME
-set LT_ACCESS_KEY=LT_ACCESS_KEY
-```
+![Inspect_Screenshot](https://user-images.githubusercontent.com/1688653/205455835-8d3bc4dc-28bf-4be1-9baa-f1de6718d70e.png)
 
-## Project Execution
+## Execution ##
 
-Run the following command on the terminal to trigger tests on local Grid and LambdaTest Selenium Grid
+ - Open the project in IntelliJ IDE
+ - Right click on `testng.xml` and select *Run...*
 
-```bash
-mvn test
-```
+![enter image description here](https://user-images.githubusercontent.com/1688653/205456191-775c3eb7-566b-48aa-bb72-7d9d5ae64480.png)
 
-Tests on local Grid and LambdaTest Selenium Grid will be executed in parallel. Here is the execution snapshot on LambdaTest Selenium Grid:
+![Execution Snapshot](https://user-images.githubusercontent.com/1688653/205456192-f5ca3e31-c134-4b61-84e3-2bbcc4848fca.png)
 
-<img width="1389" alt="Screenshot_1" src="https://user-images.githubusercontent.com/1688653/185630138-a0c707b2-0359-478e-b67d-472760ef56e9.png">
-<img width="1118" alt="Screenshot_2" src="https://user-images.githubusercontent.com/1688653/185630145-fed1a96d-516b-481c-9e2d-82c2a6328e32.png">
+ - You would see the interactions on Calculator and Notepad applications automated using *WinAppDriver.exe*. The final text file is saved in the location that is mentioned in `testng.xml`
 
-Here is the screenshot of tests run on LambdaTest Grid:
+Here is a **[video](https://www.youtube.com/watch?v=sXLde_8aGrg)** with the test execution in progress
 
-<img width="1435" alt="Screenshot_3" src="https://user-images.githubusercontent.com/1688653/185632072-d3c5298b-e607-409c-be67-3b2c0fd5e818.png">
-
-
-## Need Assistance?
+### Need Assistance? ###
 Discuss your queries by writing to me at [himanshu[dot]sheth[at]gmail](mailto:himanshu.sheth@gmail.com) or you can ping me on the following social media sites:
 
-<b>Twitter</b>: [@hjsblogger](https://www.twitter.com/hjsblogger)
-<br/>
-<b>LinkedIn</b>: [@hjsblogger](https://linkedin.com/in/hjsblogger)
-<br/>
-<b>Facebook</b>: [@hjsblogger](https://facebook.com/hjsblogger)
-
-
-
+ - **LinkedIn** : [@hjsblogger](https://linkedin.com/in/hjsblogger)
+ -  **Twitter** : [@hjsblogger](https://www.twitter.com/hjsblogger)
