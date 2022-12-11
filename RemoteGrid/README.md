@@ -110,7 +110,7 @@ testRunnerCommand: mvn test `-Dplatname=win `-Dmaven.repo.local=./.m2 dependency
 ```
 ### Execution - Auto Split ###
 
-Since the concurrency is set to 2, both the tests will be run independently. Shown below are some of the auto-split execution screeshots that indicate that test methods in *Notepad* and *ClassicCalculator* executed in parallel on HyperExecute grid:
+Since the concurrency is set to 2, both the tests will be run independently. Shown below are some of the auto-split execution screenshots that indicate that test methods in *Notepad* and *ClassicCalculator* executed in parallel on HyperExecute grid:
 
 <img width="1398" alt="AutoSplit_2" src="https://user-images.githubusercontent.com/1688653/206882961-8961e3c8-9d9f-4504-8f58-e0ce280dd0c5.png">
 <img width="1398" alt="AutoSplit_3" src="https://user-images.githubusercontent.com/1688653/206882959-f28789c7-8b69-481c-8a89-6691a6e21bdb.png">
