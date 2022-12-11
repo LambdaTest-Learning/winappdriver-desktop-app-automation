@@ -57,7 +57,7 @@ Auto-test split (or auto split) workflow comes handy when you want to run tests 
 
 Concurrency can be on any level (e.g. file, module, test suite, test, scenario, etc). It is up to the user to decide the level at which they want to split the tests. Further information about auto-splitting is available in the [official documentation of HyperExecute on smart auto test splitting](https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml#smart-auto-test-splitting)
 
-The YAML file located in *yaml/winappdriver_hyperexecute_autosplit.xml* fetches the *class names* from *xml/testng_win.xml*. Running the *testDiscovery* command on the terminal gives the following output:
+The YAML file located in *yaml/winappdriver_hyperexecute_autosplit.xml* fetches the *tests* from *xml/testng_win.xml*. Running the *testDiscovery* command on the terminal gives the following output:
 
 <img width="1253" alt="AutoSplit_Command_Execution" src="https://user-images.githubusercontent.com/1688653/206831096-7b63fd68-b9ce-4ff8-9c0f-0f138ad9d64b.png">
 
@@ -109,7 +109,21 @@ testDiscovery:
 
 testRunnerCommand: mvn test `-Dplatname=win `-Dmaven.repo.local=./.m2 dependency:resolve `-DselectedTests=$test
 ```
+### Execution - Auto Split ###
 
+Since the concurrency is set to 2, both the tests will be run independently. Shown below are some of the auto-split execution screeshots that indicate that test methods in *Notepad* and *ClassicCalculator* executed in parallel on HyperExecute grid:
+
+<img width="1398" alt="AutoSplit_2" src="https://user-images.githubusercontent.com/1688653/206882961-8961e3c8-9d9f-4504-8f58-e0ce280dd0c5.png">
+<img width="1398" alt="AutoSplit_3" src="https://user-images.githubusercontent.com/1688653/206882959-f28789c7-8b69-481c-8a89-6691a6e21bdb.png">
+<img width="1398" alt="AutoSplit_4" src="https://user-images.githubusercontent.com/1688653/206882955-c8d103e0-ea32-4ed3-ac22-b89bee2d2c55.png">
+
+Here are the screenshots from the *HyperExecute Automation Dashboard* on LambdaTest:
+
+<img width="1413" alt="Autosplit_Dashboard_1" src="https://user-images.githubusercontent.com/1688653/206883191-f72275d8-991c-4485-a888-5a0c97910248.png">
+
+<img width="1407" alt="Autosplit_Dashboard_2" src="https://user-images.githubusercontent.com/1688653/206883189-c034aca0-34ec-4a35-ba58-4215e67f931d.png">
+
+<img width="1407" alt="Autosplit_Dashboard_3" src="https://user-images.githubusercontent.com/1688653/206883188-71f66c9b-4344-4fa7-8c33-1fea7dce4e0c.png">
 
 ## Project Execution
 
