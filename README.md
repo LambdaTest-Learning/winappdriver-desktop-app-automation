@@ -1,8 +1,8 @@
-Refer to the following *ReadMe* files for running tests on local Grid:
+1. Refer to the following *ReadMe* files for running tests on <b>Local Grid</b>:
 
 [Desktop Application Testing on local Grid](https://github.com/hjsblogger/winappdriver-desktop-app-automation/blob/main/LocalGrid/README.md)
 
-Refer to the following *ReadMe* files for running tests on LambdaTest HyperExecute Grid:
+2. Refer to the following *ReadMe* files for running tests on <b>LambdaTest HyperExecute Grid</b>:
 
 [Desktop Application Testing on HyperExecute Grid](https://github.com/hjsblogger/winappdriver-desktop-app-automation/blob/main/RemoteGrid/README.md)
 
