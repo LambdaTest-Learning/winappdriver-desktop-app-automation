@@ -53,6 +53,15 @@ set LT_ACCESS_KEY=LT_ACCESS_KEY
 
 ## Test Orchestration using Auto Split
 
+Auto-test split (or auto split) workflow comes handy when you want to run tests at predefined concurrency and distribute the tests over the available infrastructure.
+
+Concurrency can be on any level (e.g. file, module, test suite, test, scenario, etc). It is up to the user to decide the level at which they want to split the tests. Further information about auto-splitting is available in the [official documentation of HyperExecute on smart auto test splitting](https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml#smart-auto-test-splitting)
+
+The YAML file located in *yaml/winappdriver_hyperexecute_autosplit.xml* fetches the *class names* from *xml/testng_win.xml*. Running the *testDiscovery* command on the terminal gives the following output:
+
+<img width="1253" alt="AutoSplit_Command_Execution" src="https://user-images.githubusercontent.com/1688653/206831096-7b63fd68-b9ce-4ff8-9c0f-0f138ad9d64b.png">
+
+Here is the complete YAML file that orchestrates the tests for auto split execution: 
 
 
 ```yaml
