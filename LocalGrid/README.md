@@ -1,4 +1,4 @@
-Before running the tests, please check the location of the Calculator, Calculator (Classic), and Notepad applications on your Windows machine. The Calculator (Classic) application was not present on my machine, hence it was downloaded from the internet. You can also download and install the Calculator (Classic) application from [here](https://github.com/microsoft/WinAppDriver/releases/tag/v1.2.99)
+Before running the tests, please check the location of the <b>Calculator</b>, <b>Calculator (Classic)</b>, and <b>Notepad</b> applications on your Windows machine. The Calculator (Classic) application was not present on my machine, hence it was downloaded from the internet. You can also download and install the Calculator (Classic) application from [here](https://github.com/microsoft/WinAppDriver/releases/tag/v1.2.99)
 
 In the Notepad automation demo, the *.txt* file is saved in the folder *c:\Himanshu* as *WinAppDriverDemo.txt*. In case you want to change the folder name, please change it [testng.xml](https://github.com/hjsblogger/winappdriver-desktop-app-automation/blob/main/testng.xml)
 
