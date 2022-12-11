@@ -20,7 +20,7 @@ For triggering tests on HyperExecute Grid, please download the HyperExecute CLI 
 - macOS:	https://downloads.lambdatest.com/hyperexecute/darwin/hyperexecute
 - Linux:	https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
 
-Place the same in the project's root folder and provide *execution* (i.e. +x) to the executable:
+Place the same in the project's root folder and provide *execution* (i.e. +x) permission to the executable:
 
 <img width="747" alt="HyperExecute_Command_Copy" src="https://user-images.githubusercontent.com/1688653/206834201-533db74e-311b-48fd-a64c-1bc47f10d39c.png">
 
