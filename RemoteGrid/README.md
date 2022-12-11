@@ -63,7 +63,6 @@ The YAML file located in *yaml/winappdriver_hyperexecute_autosplit.xml* fetches 
 
 Here is the complete YAML file that orchestrates the tests for auto split execution: 
 
-
 ```yaml
 ---
 version: 0.1
@@ -125,32 +124,94 @@ Here are the screenshots from the *HyperExecute Automation Dashboard* on LambdaT
 
 <img width="1407" alt="Autosplit_Dashboard_3" src="https://user-images.githubusercontent.com/1688653/206883188-71f66c9b-4344-4fa7-8c33-1fea7dce4e0c.png">
 
-## Project Execution
+## Test Orchestration using Matrix Multiplexing
 
-Run the following command on the terminal to trigger tests on local Grid and LambdaTest Selenium Grid
+Choose the matrix-based build multiplexing for running similar test cases over a variety of different combinations. For example, an environment combination could be a browser and different versions of the corresponding browser. It is not only limited to browser & OS combinations, matrix-based multiplexing can be used for custom params like files, folders, tags, features, scenarios, input values, etc.
 
-```bash
-mvn test
+Consider a scenario where the matrix calculation results in 10 different tasks (or test combinations). In such a case, 10 different VMs will be parallely spawned and all the tasks (or tests) will be run in parallel on the respective VM.
+
+Further information about auto-splitting is available in the [official documentation of HyperExecute on matrix based multiplexing](https://www.lambdatest.com/support/docs/deep-dive-into-hyperexecute-yaml#matrix-based-build-multiplexing)
+
+The test names mentioned in *xml/testng_win.xml* are added in the form of matrix in *yaml/winappdriver_hyperexecute_matrix.xml*. The *mvn* command runs the tests in parallel (depending on the *concurrency* level set in YAML) on the HyperExecute Grid.
+
+```yaml
+matrix:
+  tests: ["Notepad", "ClassicCalculator"]
+........
+........
+........
+testSuites:
+  - mvn test `-Dplatname=win `-Dmaven.repo.local=m2_cache_dir `-DselectedTests=$tests
 ```
 
-Tests on local Grid and LambdaTest Selenium Grid will be executed in parallel. Here is the execution snapshot on LambdaTest Selenium Grid:
+Here is the complete YAML file that orchestrates the tests for matrix execution: 
 
-<img width="1389" alt="Screenshot_1" src="https://user-images.githubusercontent.com/1688653/185630138-a0c707b2-0359-478e-b67d-472760ef56e9.png">
-<img width="1118" alt="Screenshot_2" src="https://user-images.githubusercontent.com/1688653/185630145-fed1a96d-516b-481c-9e2d-82c2a6328e32.png">
+```yaml
+---
+version: 0.1
+globalTimeout: 150
+testSuiteTimeout: 150
+testSuiteStep: 150
 
-Here is the screenshot of tests run on LambdaTest Grid:
+runson: win
+retryOnFailure: true
 
-<img width="1435" alt="Screenshot_3" src="https://user-images.githubusercontent.com/1688653/185632072-d3c5298b-e607-409c-be67-3b2c0fd5e818.png">
+maxRetries: 5
+concurrency: 2
+
+env:
+  # PAT: ${{ .secrets.testKey }}
+  CACHE_DIR: m2_cache_dir
+
+cacheKey: '{{ checksum "pom.xml" }}'
+cacheDirectories:
+  - $CACHE_DIR
+
+matrix:
+  tests: ["Notepad", "ClassicCalculator"]
+
+# shell: bash
+
+pre:
+  # Download and install packages in the CACHE_DIR.
+  # Skip execution of the tests in the pre step
+  - mvn -Dmaven.repo.local=$CACHE_DIR -Dmaven.test.skip=true clean install
+
+post:
+  - cat yaml/win/winappdriver_hyperexecute_matrix.yaml
+
+mergeArtifacts: true
+
+uploadArtefacts:
+ - name: ExecutionSnapshots
+   path:
+    - target/surefire-reports/html/**
+
+testSuites:
+  - mvn test `-Dplatname=win `-Dmaven.repo.local=m2_cache_dir `-DselectedTests=$tests
+```
+
+### Execution - Matrix Multiplexing ###
+
+Since the concurrency is set to 2, both the tests will be run independently. Shown below are some of the matrix execution screeshots that indicate that test methods in *Notepad* and *ClassicCalculator* executed in parallel on HyperExecute grid:
+
+<img width="1401" alt="Matrix_1" src="https://user-images.githubusercontent.com/1688653/206883529-c4e3e84f-7e10-4c37-9a5d-c636cffda912.png">
+<img width="1401" alt="Matrix_2" src="https://user-images.githubusercontent.com/1688653/206883528-522f5ee1-9c4f-4e4d-ba30-48fd2193bccd.png">
+<img width="1396" alt="Matrix_3" src="https://user-images.githubusercontent.com/1688653/206883526-69fdfdd1-fcf5-4ad4-a168-6a4694d0adab.png">
+
+
+Here are the screenshots from the *HyperExecute Automation Dashboard* on LambdaTest:
+
+<img width="1410" alt="Matrix_Dashboard_1" src="https://user-images.githubusercontent.com/1688653/206883715-68825012-2313-4c14-a455-1da03f2e7ccd.png">
+
+<img width="1410" alt="Matrix_Dashboard_2" src="https://user-images.githubusercontent.com/1688653/206883714-71a5cb44-3cc1-4ea9-9b23-baf72482f9f0.png">
+
+<img width="1410" alt="Matrix_Dashboard_3" src="https://user-images.githubusercontent.com/1688653/206883713-4042d18e-df62-4ef0-be57-772fcab63b21.png">
 
 
 ## Need Assistance?
-Discuss your queries by writing to me at [himanshu[dot]sheth[at]gmail](mailto:himanshu.sheth@gmail.com) or you can ping me on the following social media sites:
+Feel free to fork the repo and contribute to make it better! Email to [himanshu[dot]sheth[at]gmail[dot]com](mailto:himanshu.sheth@gmail.com) for any queries or ping me on the following social media sites:
 
 <b>Twitter</b>: [@hjsblogger](https://www.twitter.com/hjsblogger)
 <br/>
 <b>LinkedIn</b>: [@hjsblogger](https://linkedin.com/in/hjsblogger)
-<br/>
-<b>Facebook</b>: [@hjsblogger](https://facebook.com/hjsblogger)
-
-
-
