@@ -78,6 +78,8 @@ retryOnFailure: true
 maxRetries: 5
 concurrency: 2
 
+captureScreenRecordingForScenarios: true
+
 env:
   # PAT: ${{ .secrets.testKey }}
   CACHE_DIR: m2_cache_dir
@@ -158,6 +160,8 @@ retryOnFailure: true
 
 maxRetries: 5
 concurrency: 2
+
+captureScreenRecordingForScenarios: true
 
 env:
   # PAT: ${{ .secrets.testKey }}
