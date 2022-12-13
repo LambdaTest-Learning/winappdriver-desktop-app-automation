@@ -126,6 +126,12 @@ Here are the screenshots from the *HyperExecute Automation Dashboard* on LambdaT
 
 <img width="1407" alt="Autosplit_Dashboard_3" src="https://user-images.githubusercontent.com/1688653/206883188-71f66c9b-4344-4fa7-8c33-1fea7dce4e0c.png">
 
+A video gets generated for each test scenario where you can see the interactions being done on the elements in the application. Simply click on "Watch Video" to see the test execution in action:
+
+<img width="1413" alt="AutoSplit_Watch_Video_1" src="https://user-images.githubusercontent.com/1688653/207234167-be40bf50-383c-466b-9a5e-99703a26d5e0.png">
+
+<img width="1437" alt="AutoSplit_Watch_Video_2" src="https://user-images.githubusercontent.com/1688653/207234166-a79be61f-ee64-40c7-bc4e-85e00dcc83b3.png">
+
 ## Test Orchestration using Matrix Multiplexing
 
 Choose the matrix-based build multiplexing for running similar test cases over a variety of different combinations. For example, an environment combination could be a browser and different versions of the corresponding browser. It is not only limited to browser & OS combinations, matrix-based multiplexing can be used for custom params like files, folders, tags, features, scenarios, input values, etc.
@@ -203,7 +209,6 @@ Since the concurrency is set to 2, both the tests will be run independently. Sho
 <img width="1401" alt="Matrix_2" src="https://user-images.githubusercontent.com/1688653/206883528-522f5ee1-9c4f-4e4d-ba30-48fd2193bccd.png">
 <img width="1396" alt="Matrix_3" src="https://user-images.githubusercontent.com/1688653/206883526-69fdfdd1-fcf5-4ad4-a168-6a4694d0adab.png">
 
-
 Here are the screenshots from the *HyperExecute Automation Dashboard* on LambdaTest:
 
 <img width="1410" alt="Matrix_Dashboard_1" src="https://user-images.githubusercontent.com/1688653/206883715-68825012-2313-4c14-a455-1da03f2e7ccd.png">
@@ -212,6 +217,10 @@ Here are the screenshots from the *HyperExecute Automation Dashboard* on LambdaT
 
 <img width="1410" alt="Matrix_Dashboard_3" src="https://user-images.githubusercontent.com/1688653/206883713-4042d18e-df62-4ef0-be57-772fcab63b21.png">
 
+A video gets generated for each test scenario where you can see the interactions being done on the elements in the application. Simply click on "Watch Video" to see the test execution in action:
+
+<img width="1437" alt="Matrix_Watch_Video_1" src="https://user-images.githubusercontent.com/1688653/207234164-f59a8a7f-d6e4-42d9-b0c3-74cc181bbfac.png">
+<img width="1437" alt="Matrix_Watch_Video_2" src="https://user-images.githubusercontent.com/1688653/207234161-fa0a06a8-7cad-4f46-abd6-e35e72e44ef9.png">
 
 ## Need Assistance?
 Feel free to fork the repo and contribute to make it better! Email to [himanshu[dot]sheth[at]gmail[dot]com](mailto:himanshu.sheth@gmail.com) for any queries or ping me on the following social media sites:
