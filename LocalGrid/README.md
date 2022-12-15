@@ -30,8 +30,11 @@ Start WinAppDriver.exe by running the command **./WinAppDriver.exe** after navig
 
 Here is a [video](https://youtu.be/L69UO8ixI6w) with the test execution in progress
 
-### Need Assistance? ###
-Discuss your queries by writing to me at [himanshu[dot]sheth[at]gmail][dot]com(mailto:himanshu.sheth@gmail.com) or you can ping me on the following social media sites:
+## Need Assistance?
+Feel free to fork the repo and contribute to make it better! You can follow LambdaTest on the following handles:
 
- - **LinkedIn** : [@hjsblogger](https://linkedin.com/in/hjsblogger)
- - **Twitter** : [@hjsblogger](https://www.twitter.com/hjsblogger)
+<b>GitHub</b>: https://github.com/LambdaTest
+<br/>
+<b>Twitter</b>: https://www.twitter.com/lambdatesting
+<br/>
+<b>LinkedIn</b>: https://www.linkedin.com/company/lambdatest
